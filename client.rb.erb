@@ -1,0 +1,12 @@
+chef_license            "accept"
+chef_server_url         "{{ url }}"
+log_level               :info
+log_location            STDOUT
+verify_api_cert         true
+node_name               "{{ client }}"
+client_key              "/root/.chef/client.pem"
+ssl_verify_mode         :verify_none
+cookbook_path           ["/cookbooks"]
+ohai.disabled_plugins    [:Sessions]
+file_backup_path        "/var/lib/chef"
+run_path                "/var/run/chef"
